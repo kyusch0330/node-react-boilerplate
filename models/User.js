@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoos.Schema({
+const userSchema = mongoose.Schema({
   name: {
     type: String,
     maxlength: 50
@@ -12,7 +12,7 @@ const userSchema = mongoos.Schema({
   },
   password: {
     type: String,
-    minlength: 50
+    minlength: 5
   },
   role: { //어떤 사용자인지(관리자,일반유저)
     type: Number,
