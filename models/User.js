@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt'); //비밀번호 암호화를 위한 패키지
 const saltRounds = 10; // 비밀번호 암호화용 salt값의 자릿수
 const jwt = require('jsonwebtoken');
-const tokenKey = require('../config/key').tokenKey; //access 토큰으로 만들기 위한 토큰 키
+const tokenKey = require('../config/key').tokenKey; //access 토큰을 만들기 위한 토큰 키
 
 const userSchema = mongoose.Schema({
   name: {
@@ -84,7 +84,7 @@ userSchema.methods.generateToken = function(cb) {
   const token = jwt.sign(user._id.toHexString(), tokenKey); // _id: database에 존재하는 id , tokenKey: 임의로 지정하면 된다.
 
   /*
-    user._id + 'tokenKey' => token 을 만드는 것
+    user._id + 'tokenKey' => access token 을 만드는 것
     나중에 토큰 해석 시, tokenKey 넣으면
     user._id가 나와서 누군지 알 수 있게 되는 것.
     => tokenKey 을 기억 해둬야 함
