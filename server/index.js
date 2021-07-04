@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 5000;
 //const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
@@ -35,6 +35,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!!!');
 });
 
+app.get('/api/hello', (req, res) => 
+  res.send('Hello Cilent!'));
 
 /* register router */
 app.post('/api/register', (req, res) => {  //'/register' -> end point

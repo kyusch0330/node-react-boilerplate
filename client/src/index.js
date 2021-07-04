@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+//Ant Design
+import 'antd/dist/antd.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
