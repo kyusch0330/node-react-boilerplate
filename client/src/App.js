@@ -7,11 +7,10 @@ import RegisterPage from './components/views/RegisterPage/RegisterPage';
 function App() {
   return (
     <HashRouter>
-     
       <Switch> {/**매칭되는 첫번째 라우트만 보여준다. */}
-        <Route exact={true} path='/' component ={LandingPage}/>
-        <Route path='/login' component ={LoginPage}/>
-        <Route path='/register' component ={RegisterPage}/>
+        <Route exact path='/' component ={LandingPage}/>
+        <Route exact path='/login' component ={LoginPage}/>
+        <Route exact path='/register' component ={RegisterPage}/>
       </Switch>
     </HashRouter>
   );
