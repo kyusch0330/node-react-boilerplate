@@ -64,8 +64,7 @@ userSchema.pre('save', function( next ){
 
 //평문암호와 콜백함수를 인자로 받아 해시화된 비밀번호를 비교하는 메소드
 userSchema.methods.comparePassword = function(plainPassword, cb) {
-  console.log(plainPassword+" vs. "+this.password);
-
+  
   //bcrypt.compare의 인자로 입력된 평문 비밀번호를 해시화 시켜 
   //db의 동일 이메일에 해당하는 유저(index.js에서 찾음)의 비밀번호 해시값과 비교한다.
   bcrypt.compare(plainPassword, this.password, function(err, isMatch){ 

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const { auth } = require('./middleware/auth');
@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!!!');
 });
 
+
 /* register router */
 app.post('/api/register', (req, res) => {  //'/register' -> end point
   /* 회원 가입 시 필요한 필요 정보들을 client에서 가져오면
@@ -60,6 +61,7 @@ app.post('/api/register', (req, res) => {  //'/register' -> end point
       });
     }); //status(200)는 성공했다는 의미
 });
+
 
 /* login router */
 app.post('/api/users/login', (req, res) => {
@@ -97,8 +99,7 @@ app.post('/api/users/login', (req, res) => {
 });
 
 /* authentication */
-//auth는 middleware, endpoint의 request를 받고 call back을 실행기 전에
-//중간에서 수행하는 동작
+//auth는 middleware, endpoint의 request를 받고 call back을 실행하기 전에 중간에서 수행하는 동작
 app.get('/api/users/auth', auth , (req, res) => {
 
   //여기까지 왔으면 미들웨어를 통과해 왔다는 이야기, Authentication이 true라는 의미
