@@ -35,11 +35,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!!!');
 });
 
-app.get('/api/hello', (req, res) => 
-  res.send('Hello Cilent!'));
 
 /* register router */
-app.post('/api/register', (req, res) => {  //'/register' -> end point
+app.post('/api/users/register', (req, res) => {  //'/register' -> end point
   /* 회원 가입 시 필요한 필요 정보들을 client에서 가져오면
      그것들을 DB에 넣어준다.  */
 
