@@ -6,5 +6,5 @@ mongoDB, mongoose
 
 # client  
 React  
-Redux
+Redux  
 React Router
